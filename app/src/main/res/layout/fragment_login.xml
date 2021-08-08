@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<LinearLayout android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/layout_margin"
+    >
+
+    <TextView
+        android:layout_weight="0"
+        style="@style/text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email" />
+    <EditText
+        android:layout_weight="0"
+        style="@style/text_style"
+        android:id="@+id/edit_email"
+        android:inputType="textEmailAddress"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+    <TextView
+        android:layout_weight="0"
+        style="@style/text_style"
+        android:text="@string/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_weight="0"
+        style="@style/text_style"
+        android:id="@+id/edit_password"
+        android:inputType="textEmailAddress"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+    <Button
+        android:layout_weight="0"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:text="@string/login_txt"
+        android:id="@+id/btn_login"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"/>
+
+    <Button
+        android:layout_weight="0"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@color/yellow"
+        android:id="@+id/btn_signup"
+        android:text="@string/sign_up"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"/>
+
+
+
+</LinearLayout>
+</layout>
