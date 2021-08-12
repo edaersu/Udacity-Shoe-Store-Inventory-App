@@ -41,7 +41,7 @@ class DetailFragment:Fragment() {
         }
         binding.btnSave.setOnClickListener {
             val img: ArrayList<Int> = ArrayList()
-            img.add(R.drawable.shoe)
+            img.add(R.drawable.sneaker)
 
             viewModel.addItem(ShoeModel(binding.shoeName.text.toString(),
                 binding.shoeSize.text.toString(),

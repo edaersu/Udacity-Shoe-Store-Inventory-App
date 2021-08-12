@@ -9,7 +9,7 @@
     <string name="welcome_detail_text">Welcome the my Shoe Store App :)</string>
     <string name="welcome_button">Go to Instructions Page</string>
     <string name="instructions_text">Instructions</string>
-    <string name="instructions_details">Add a text</string>
+    <string name="instructions_details">You are redirected to the shoe list page. Start your shoe review now!</string>
     <string name="go_to_instructions">Go to shoe List</string>
     <string name="email">Email:</string>
     <string name="password">Password:</string>

@@ -17,25 +17,23 @@ class ShoeProductViewModel: ViewModel() {
     }
 
     private fun initializeShoeList() {
-        val shoe1Images: ArrayList<Int> = ArrayList()
-        shoe1Images.add(R.drawable.shoe)
+        val img: ArrayList<Int> = ArrayList()
+        img.add(R.drawable.puma)
         val shoe1 = ShoeModel(
-            "s1", "42", "c1", "d1",
-            shoe1Images
+            "LQDCELL Colorblock", "42", "Puma", "Women",
+            img
         )
-
-        val shoe2Images: ArrayList<Int> = ArrayList()
-        shoe2Images.add(R.drawable.shoe)
+        val img2: ArrayList<Int> = ArrayList()
+        img2.add(R.drawable.levis)
         val shoe2 = ShoeModel(
-            "s2", "36", "c2", "d2",
-            shoe2Images
+            "Sneaker", "36", "Levi's", "Unisex",
+            img2
         )
-
-        val shoe3Images: ArrayList<Int> = ArrayList()
-        shoe3Images.add(R.drawable.shoe)
+        val img3: ArrayList<Int> = ArrayList()
+        img3.add(R.drawable.airmax)
         val shoe3 = ShoeModel(
-            "s2", "39", "c3", "d3",
-            shoe3Images
+            "Air Max Impact 2 ", "39", "Nike", "Women",
+            img3
         )
         _shoeList.value = mutableListOf(shoe1, shoe2, shoe3)
     }

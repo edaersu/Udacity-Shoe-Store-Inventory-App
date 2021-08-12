@@ -64,15 +64,19 @@ class ListingFragment :Fragment() {
         return binding.root
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, view!!.findNavController()) ||
-                super.onOptionsItemSelected(item)
-    }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        //inflater.inflate(R.menu.logout_menu, menu) }
+        inflater.inflate(R.menu.menu, menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.getItemId()
 
-}
+        if (id == R.id.logout) {
+            findNavController().navigate(ListingFragmentDirections.actionShoeListFragmentToLoginFragment())
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+
+    }
 }
