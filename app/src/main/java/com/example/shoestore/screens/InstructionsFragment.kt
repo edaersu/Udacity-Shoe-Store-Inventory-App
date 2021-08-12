@@ -23,7 +23,6 @@ class InstructionsFragment :Fragment(){
             container,
             false
         )
-
         binding.btnGotoList.setOnClickListener {
             findNavController().navigate(InstructionsFragmentDirections.actionİnstructionsFragmentToShoeListFragment())
         }

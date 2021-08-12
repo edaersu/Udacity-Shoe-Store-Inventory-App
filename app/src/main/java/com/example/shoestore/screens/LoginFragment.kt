@@ -14,7 +14,6 @@ import com.example.shoestore.databinding.FragmentLoginBinding
 
 class LoginFragment: Fragment() {
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding: FragmentLoginBinding
         binding = DataBindingUtil.inflate(
@@ -24,27 +23,21 @@ class LoginFragment: Fragment() {
             false
         )
         binding.btnLogin.setOnClickListener {
-            if(binding.editEmail.text.toString().isNotEmpty() && binding.editPassword.text.toString().isNotEmpty()){
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
-            }
-            else{
-                Toast.makeText(context,"Please enter email and password!",Toast.LENGTH_LONG).show()
-            }
-
+            control(binding)
         }
         binding.btnSignup.setOnClickListener {
-            if(binding.editEmail.text.toString().isNotEmpty() && binding.editPassword.text.toString().isNotEmpty()){
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
-            }
-            else{
-                Toast.makeText(context,"Please enter email and password!",Toast.LENGTH_LONG).show()
-            }
-
+           control(binding)
         }
-
-
         return binding.root
     }
 
+    fun control(binding:FragmentLoginBinding){
+        if(binding.editEmail.text.toString().isNotEmpty() && binding.editPassword.text.toString().isNotEmpty()){
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        }
+        else{
+            Toast.makeText(context,"Please enter email and password!",Toast.LENGTH_LONG).show()
+        }
+    }
 
 }
