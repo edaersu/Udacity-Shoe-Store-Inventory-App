@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+I used linear layout in this activity because
+I needed to add components down one by one on this page.
+That's why I thought it would be easier and healthier with
+a vertical linear layout.
+-->
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
 
         <variable
-            name="productViewModel"
+            name="shoeViewModel"
             type="com.example.shoestore.viewModel.ShoeProductViewModel" />
     </data>
 
@@ -20,6 +28,7 @@
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/shoe_name"
+        android:text="@={shoeViewModel.shoeName}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
@@ -30,6 +39,7 @@
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/company_name"
+        android:text="@={shoeViewModel.shoeCompany}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
@@ -40,6 +50,7 @@
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/shoe_size"
+        android:text="@={shoeViewModel.shoeSize}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
@@ -50,6 +61,7 @@
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/description"
+        android:text="@={shoeViewModel.shoeDescription}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+<!--
+I decided to put 2 textviews and 1 button in the middle of the screen,
+which I will use on this page, and I thought it would be easier to
+use ConstraintLayout to give the distance to each other as easily as
+in udacity lessons.
+-->
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_margin="@dimen/layout_margin"
         android:orientation="vertical"
         android:gravity="center_vertical"
@@ -9,28 +18,42 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:textAlignment="center"
-            android:text="@string/welcome_text"
+            android:id="@+id/textView2"
             style="@style/green_text_style"
-            android:layout_weight="0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/welcome_text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.16000003" />
 
         <TextView
-            android:textAlignment="center"
-            android:text="@string/welcome_detail_text"
+            android:id="@+id/textView"
             style="@style/text_style"
-            android:layout_weight="0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/welcome_detail_text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.13999999"
+            tools:layout_editor_absoluteX="43dp" />
 
         <Button
             android:id="@+id/btn_goto_instructions"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/layout_margin"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:text="@string/welcome_button"/>
-    </LinearLayout>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/welcome_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.13999999" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

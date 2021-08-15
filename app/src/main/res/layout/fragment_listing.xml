@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--
+I used ConstraintLayout in this activity because it was a topic
+in udacity classes and I used it for practice. Besides, since I want to
+add a floating action button to the screen,
+I thought I could do it in ConstraintLayout the easiest.
+-->
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <variable
@@ -7,7 +16,7 @@
             type="com.example.shoestore.viewModel.ShoeProductViewModel" />
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -35,16 +44,17 @@
             </LinearLayout>
 
         </ScrollView>
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/go_to_detail_btn"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/add"
-            android:layout_margin="15dp"
-            android:backgroundTint="@color/colorPrimary"/>
 
-    </RelativeLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/goToDetailBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/shoe_list_scroll"
+            android:src="@drawable/add"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -31,7 +31,7 @@ class DetailFragment:Fragment() {
             false
         )
         viewModel = ViewModelProvider(requireActivity()).get(ShoeProductViewModel::class.java)
-        binding.productViewModel = viewModel
+        binding.shoeViewModel = viewModel
         binding.lifecycleOwner = this
 
         binding.btnCancel.setOnClickListener {
@@ -40,15 +40,7 @@ class DetailFragment:Fragment() {
 
         }
         binding.btnSave.setOnClickListener {
-            val img: ArrayList<Int> = ArrayList()
-            img.add(R.drawable.sneaker)
-
-            viewModel.addItem(ShoeModel(binding.shoeName.text.toString(),
-                binding.shoeSize.text.toString(),
-                binding.companyName.text.toString(),
-                binding.description.text.toString()
-                ,img))
-            binding.shoeName.getText()
+            viewModel.addItem()
             Toast.makeText(context,"Added",Toast.LENGTH_SHORT).show()
             findNavController().navigate(DetailFragmentDirections.actionProductDetailsFragmentToShoeListFragment())
 

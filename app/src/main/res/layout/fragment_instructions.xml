@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+I used linear layout in this activity because
+I needed to add components down one by one on this page.
+That's why I thought it would be easier and healthier with
+a vertical linear layout.
+-->
+
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 

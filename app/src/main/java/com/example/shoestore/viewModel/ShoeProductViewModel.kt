@@ -1,5 +1,6 @@
 package com.example.shoestore.viewModel
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +12,11 @@ class ShoeProductViewModel: ViewModel() {
     private var _shoeList = MutableLiveData<MutableList<ShoeModel>>()
     val shoeList: MutableLiveData<MutableList<ShoeModel>>
         get() = _shoeList
+
+    var shoeName: MutableLiveData<String> = MutableLiveData()
+    var shoeCompany: MutableLiveData<String> = MutableLiveData()
+    var shoeSize: MutableLiveData<String> = MutableLiveData()
+    var shoeDescription: MutableLiveData<String> = MutableLiveData()
 
     init {
         initializeShoeList()
@@ -38,7 +44,13 @@ class ShoeProductViewModel: ViewModel() {
         _shoeList.value = mutableListOf(shoe1, shoe2, shoe3)
     }
 
-    fun addItem(shoe:ShoeModel){
+    fun addItem(){
+        val img: ArrayList<Int> = ArrayList()
+        img.add(R.drawable.sneaker)
+        val shoe = ShoeModel(
+            shoeName.value.toString(), shoeSize.value.toString(), shoeCompany.value.toString(), shoeDescription.value.toString(),
+            img
+        )
        _shoeList.value?.add(shoe)
     }
 }
